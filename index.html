@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>news Letter</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<nav>
+			<div class="main-nav container flex">
+				<a href="#"
+					><img class="log" src="./assets/log1.png" alt="company-log"
+				/></a>
+				<div class="nav-links">
+					<ul class="flex">
+						<li class="hover-link nav-item"id="eco" onclick="onNavItemClick('eco')">ECONIMICS</li>
+						<li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">POLITICS</li>
+						<li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">FINANCE</li>
+					</ul>
+				</div>
+				<div class="search-bar">
+					<input id="search-text" type="text" class="news-input" placeholder="i.e Money" />
+					<button id="search-button" class="search-button">Search</button>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<div class="cards-container container flex" id="cards-container">
+		
+			</div>
+		</main>
+
+        <template id="template-news-card">
+            		<div class="card">
+					<div class="card-header">
+						<img
+							src="https://via.placeholder.com/400x200"
+							alt="news-img"
+							id="news-img"
+						/>
+					</div>
+					<div class="card-content">
+						<h3 class="title" id="title">This is the title</h3>
+						<h6 class="new-source" id="new-source">End Gadget 26/08/2023</h6>
+						<p class="news-desc" id="news-desc">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+							ipsa.
+						</p>
+					</div>
+        </template>
+
+		<script src="scripts.js"></script>
+	</body>
+</html>
