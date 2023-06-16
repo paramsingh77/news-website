@@ -65,5 +65,3 @@ searchButton.addEventListener("click", () => {
     if (!query) return;
     fetchNews(query);
 });
-
-// sfd
