@@ -5,13 +5,27 @@ const url = "https://newsapi.org/v2/everything?q=";
 
 window.addEventListener('load', () => fetchNews("USA"));
 
+// async function fetchNews(query) {
+//     const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+//     const data = await response.json();
+//     console.log(data);
+//     bindData(data.articles);
+// }
+
 async function fetchNews(query) {
     const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    if (!response.ok) {
+        console.error(`Error: ${response.status}`);  // print the HTTP status if it's not a 2xx success status
+        return;
+    }
     const data = await response.json();
     console.log(data);
+    if (!data.articles) {
+        console.error(`Error: 'articles' property not found in response`); // print an error message if 'articles' is not found
+        return;
+    }
     bindData(data.articles);
 }
-
 
 function bindData(articles) {
     const cardsContainer = document.getElementById('cards-container');
